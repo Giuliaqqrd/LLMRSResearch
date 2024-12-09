@@ -1,0 +1,23 @@
+services:
+  tgi:
+    image: ghcr.io/huggingface/text-generation-inference:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    environment:
+      MODEL_ID: TheBloke/Open_Gpt4_8x7B_v0.2-AWQ #model ID
+    ports:
+      - "40900:80" # Map port 40900 on the host to port 80 in the container
+    volumes:
+      - $HOME/disk2/.cache/huggingface:/data # Share the volume with the container
+    shm_size: '1g' # Set shared memory size
+    command: >
+      --trust-remote-code
+      --quantize awq
+#      --num-shard 4
+#      --usage-stats off
+#      --cuda-memory-fraction 0.2
