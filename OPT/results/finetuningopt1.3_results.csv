@@ -1,0 +1,44 @@
+run_name,learning_rate,scheduler,weight_decay,epochs,train_loss,eval_loss,perplexity
+run_5_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs5,5e-05,linear,0.001,5,1.1840438657336765,1.6613813638687134,5.2665808865524575
+run_2_facebookopt1.3_lr2e-05_schedlinear_wd0.01_epochs10,2e-05,linear,0.01,10,0.9860492832130856,1.7409440279006958,5.702724413325871
+run_4_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs3,5e-05,linear,0.001,3,1.6979105472564697,1.7465949058532715,5.7350410356313715
+run_6_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs10,5e-05,linear,0.001,10,0.7843326244089338,1.6587671041488647,5.2528306574456245
+run_3_facebookopt1.3_lr2e-05_schedlinear_wd0.001_epochs3,2e-05,linear,0.001,3,2.2164492783723055,2.059448719024658,7.8416456684470015
+run_5_facebookopt1.3_lr2e-05_schedcosine_wd0.01_epochs3,2e-05,cosine,0.01,3,2.2158184316423206,2.0565152168273926,7.818675891066716
+run_4_facebookopt1.3_lr2e-05_schedlinear_wd0.001_epochs10,2e-05,linear,0.001,10,0.9869180685944028,1.7492153644561768,5.750089181161359
+run_3_facebookopt1.3_lr1e-05_schedcosine_wd0.01_epochs3,1e-05,cosine,0.01,3,2.627131144205729,2.6353840827941895,13.948668878161543
+run_8_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs5,5e-05,linear,0.0001,5,1.1879532761043972,1.6624279022216797,5.2720954505372735
+run_1_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs3,5e-05,linear,0.01,3,1.6940882515024256,1.7265033721923828,5.6209650834257605
+run_2_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs5,5e-05,linear,0.01,5,1.182680653201209,1.6481091976165771,5.197143759272941
+run_8_facebookopt1.3_lr2e-05_schedcosine_wd0.001_epochs10,2e-05,cosine,0.001,10,0.9869180685944028,1.7492153644561768,5.750089181161359
+run_6_facebookopt1.3_lr2e-05_schedcosine_wd0.01_epochs10,2e-05,cosine,0.01,10,0.9860492832130856,1.7409440279006958,5.702724413325871
+run_7_facebookopt1.3_lr2e-05_schedcosine_wd0.001_epochs3,2e-05,cosine,0.001,3,2.2164492783723055,2.059448719024658,7.8416456684470015
+run_1_facebookopt1.3_lr2e-05_schedlinear_wd0.01_epochs3,2e-05,linear,0.01,3,2.2158184316423206,2.0565152168273926,7.818675891066716
+run_1_facebookopt1.3_lr1e-05_schedlinear_wd0.01_epochs3,1e-05,linear,0.01,3,2.627131144205729,2.6353840827941895,13.948668878161543
+run_4_facebookopt1.3_lr1e-05_schedcosine_wd0.01_epochs10,1e-05,cosine,0.01,10,1.3594880779584249,2.0738272666931152,7.955211644821651
+run_7_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs3,5e-05,linear,0.0001,3,1.6929985814624362,1.7250101566314697,5.612578034290358
+run_3_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs10,5e-05,linear,0.01,10,0.7843029797077179,1.6529486179351807,5.222355879197377
+run_2_facebookopt1.3_lr1e-05_schedlinear_wd0.01_epochs10,1e-05,linear,0.01,10,1.35996775759591,2.0705718994140625,7.9293566157759745
+run_9_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs10,5e-05,linear,0.0001,10,0.7848289814260271,1.6439054012298584,5.175341882548464
+run_10_facebookopt1.3_lr5e-05_schedcosine_wd0.01_epochs3,5e-05,cosine,0.01,3,1.6940882515024256,1.7265033721923828,5.6209650834257605
+
+📈 Migliore run:
+run_name         run_9_facebookopt1.3_lr5e-05_schedlinear_wd0.0...
+learning_rate                                              0.00005
+scheduler                                                   linear
+weight_decay                                                0.0001
+epochs                                                          10
+train_loss                                                0.784829
+eval_loss                                                 1.643905
+perplexity                                                5.175342
+Name: 20, dtype: object
+
+📉 Peggiore run:
+run_name         run_3_facebookopt1.3_lr1e-05_schedcosine_wd0.0...
+learning_rate                                              0.00001
+scheduler                                                   cosine
+weight_decay                                                  0.01
+epochs                                                           3
+train_loss                                                2.627131
+eval_loss                                                 2.635384
+perplexity                                               13.948669

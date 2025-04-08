@@ -1,6 +1,10 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from huggingface_hub import InferenceClient
 
-model_name = "Qwen/Qwen2.5-14B-Instruct"
+client = InferenceClient(
+    base_url="http://localhost:40900/v1/",
+)
+# model_name = "Qwen/Qwen2.5-14B-Instruct"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,

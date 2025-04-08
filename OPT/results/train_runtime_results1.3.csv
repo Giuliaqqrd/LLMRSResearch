@@ -1,0 +1,25 @@
+run_name,train_runtime
+run_5_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs5,1202.6438
+run_2_facebookopt1.3_lr2e-05_schedlinear_wd0.01_epochs10,623.5884
+run_4_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs3,625.9862
+run_6_facebookopt1.3_lr5e-05_schedlinear_wd0.001_epochs10,4776.738
+run_3_facebookopt1.3_lr2e-05_schedlinear_wd0.001_epochs3,185.7687
+run_5_facebookopt1.3_lr2e-05_schedcosine_wd0.01_epochs3,185.8537
+run_4_facebookopt1.3_lr2e-05_schedlinear_wd0.001_epochs10,623.5279
+run_3_facebookopt1.3_lr1e-05_schedcosine_wd0.01_epochs3,199.4168
+run_8_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs5,1847.0422
+run_1_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs3,554.7829
+run_2_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs5,967.9292
+run_8_facebookopt1.3_lr2e-05_schedcosine_wd0.001_epochs10,623.52
+run_6_facebookopt1.3_lr2e-05_schedcosine_wd0.01_epochs10,623.7513
+run_7_facebookopt1.3_lr2e-05_schedcosine_wd0.001_epochs3,185.847
+run_1_facebookopt1.3_lr2e-05_schedlinear_wd0.01_epochs3,185.1041
+run_1_facebookopt1.3_lr1e-05_schedlinear_wd0.01_epochs3,198.3318
+run_4_facebookopt1.3_lr1e-05_schedcosine_wd0.01_epochs10,654.6756
+run_7_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs3,818.532
+run_3_facebookopt1.3_lr5e-05_schedlinear_wd0.01_epochs10,2418.5639
+run_2_facebookopt1.3_lr1e-05_schedlinear_wd0.01_epochs10,654.6953
+run_9_facebookopt1.3_lr5e-05_schedlinear_wd0.0001_epochs10,3883.4734
+run_10_facebookopt1.3_lr5e-05_schedcosine_wd0.01_epochs3,1020.6521
+
+Tempo medio di addestramento: 1048.20 secondi

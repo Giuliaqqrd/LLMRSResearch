@@ -1,0 +1,554 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:42<02:07, 42.52s/it]Loading checkpoint shards:  50%|█████     | 2/4 [01:27<01:28, 44.26s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [02:07<00:41, 41.86s/it]Loading checkpoint shards: 100%|██████████| 4/4 [02:07<00:00, 25.55s/it]Loading checkpoint shards: 100%|██████████| 4/4 [02:07<00:00, 31.89s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+LlamaConfig {
+  "_attn_implementation_autoset": true,
+  "_name_or_path": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": null,
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.47.0",
+  "use_cache": true,
+  "vocab_size": 128264
+}
+
+Adding pad:  <|pad|> 128256
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 85 examples [00:00, 3501.29 examples/s]
+Map:   0%|          | 0/85 [00:00<?, ? examples/s]Map: 100%|██████████| 85/85 [00:00<00:00, 3356.23 examples/s]
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 68 examples [00:00, 46376.04 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 12 examples [00:00, 15515.30 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 5 examples [00:00, 6456.75 examples/s]
+/home/ubuntu/projects/LLMRSResearch/llamapeft2.py:194: FutureWarning: `tokenizer` is deprecated and removed starting from version 0.16.0 for `SFTTrainer.__init__`. Use `processing_class` instead.
+  trainer = SFTTrainer(
+trainable params: 83,886,080 || all params: 8,114,212,864 || trainable%: 1.0338
+Map:   0%|          | 0/68 [00:00<?, ? examples/s]Map: 100%|██████████| 68/68 [00:00<00:00, 3679.59 examples/s]
+Map:   0%|          | 0/12 [00:00<?, ? examples/s]Map: 100%|██████████| 12/12 [00:00<00:00, 2169.00 examples/s]
+  0%|          | 0/15 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  7%|▋         | 1/15 [00:05<01:12,  5.21s/it] 13%|█▎        | 2/15 [00:08<00:55,  4.28s/it] 20%|██        | 3/15 [00:15<01:04,  5.40s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A                                              
+                                     [A 20%|██        | 3/15 [00:16<01:04,  5.40s/it]
+100%|██████████| 1/1 [00:00<00:00,  4.56it/s][A
+                                             [A/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 27%|██▋       | 4/15 [00:27<01:26,  7.85s/it] 33%|███▎      | 5/15 [00:28<00:54,  5.47s/it] 40%|████      | 6/15 [00:32<00:46,  5.13s/it]{'eval_loss': 2.4057905673980713, 'eval_runtime': 0.8395, 'eval_samples_per_second': 14.294, 'eval_steps_per_second': 1.191, 'epoch': 0.6}
+
+  0%|          | 0/1 [00:00<?, ?it/s][A                                              
+                                     [A 40%|████      | 6/15 [00:33<00:46,  5.13s/it]
+100%|██████████| 1/1 [00:00<00:00,  4.54it/s][A
+                                             [A/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+ 47%|████▋     | 7/15 [00:47<01:05,  8.23s/it] 53%|█████▎    | 8/15 [00:50<00:46,  6.68s/it] 60%|██████    | 9/15 [00:54<00:34,  5.73s/it]{'eval_loss': 2.2559149265289307, 'eval_runtime': 0.829, 'eval_samples_per_second': 14.476, 'eval_steps_per_second': 1.206, 'epoch': 1.2}
+
+  0%|          | 0/1 [00:00<?, ?it/s][A                                              
+                                     [A 60%|██████    | 9/15 [00:55<00:34,  5.73s/it]
+100%|██████████| 1/1 [00:00<00:00,  4.54it/s][A
+                                             [A/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.13s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.16s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.67s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:07<00:00,  1.84s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+LlamaConfig {
+  "_attn_implementation_autoset": true,
+  "_name_or_path": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": null,
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.47.0",
+  "use_cache": true,
+  "vocab_size": 128264
+}
+
+Adding pad:  <|pad|> 128256
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 643 examples [00:00, 126426.85 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 120 examples [00:00, 70949.60 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 41 examples [00:00, 36800.01 examples/s]
+/home/ubuntu/projects/LLMRSResearch/llamapeft2.py:191: FutureWarning: `tokenizer` is deprecated and removed starting from version 0.16.0 for `SFTTrainer.__init__`. Use `processing_class` instead.
+  trainer = SFTTrainer(
+trainable params: 83,886,080 || all params: 8,114,212,864 || trainable%: 1.0338
+Map:   0%|          | 0/643 [00:00<?, ? examples/s]Map: 100%|██████████| 643/643 [00:00<00:00, 10630.88 examples/s]
+Map:   0%|          | 0/120 [00:00<?, ? examples/s]Map: 100%|██████████| 120/120 [00:00<00:00, 7471.71 examples/s]
+  0%|          | 0/123 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  1%|          | 1/123 [00:03<07:57,  3.91s/it]  2%|▏         | 2/123 [00:06<06:36,  3.27s/it]  2%|▏         | 3/123 [00:10<06:35,  3.30s/it]  3%|▎         | 4/123 [00:13<06:24,  3.23s/it]  4%|▍         | 5/123 [00:15<05:35,  2.85s/it]  5%|▍         | 6/123 [00:18<05:52,  3.02s/it]  6%|▌         | 7/123 [00:26<08:33,  4.43s/it]  7%|▋         | 8/123 [00:29<08:10,  4.27s/it]  7%|▋         | 9/123 [00:33<07:50,  4.13s/it]  8%|▊         | 10/123 [00:36<07:06,  3.78s/it]                                                  8%|▊         | 10/123 [00:36<07:06,  3.78s/it]  9%|▉         | 11/123 [00:39<06:42,  3.59s/it] 10%|▉         | 12/123 [00:43<06:22,  3.45s/it] 11%|█         | 13/123 [00:45<05:55,  3.23s/it] 11%|█▏        | 14/123 [00:49<05:52,  3.23s/it] 12%|█▏        | 15/123 [00:52<05:54,  3.28s/it] 13%|█▎        | 16/123 [00:56<06:01,  3.38s/it] 14%|█▍        | 17/123 [01:00<06:32,  3.70s/it] 15%|█▍        | 18/123 [01:03<06:21,  3.63s/it] 15%|█▌        | 19/123 [01:06<05:28,  3.16s/it] 16%|█▋        | 20/123 [01:09<05:44,  3.34s/it]                                                 16%|█▋        | 20/123 [01:09<05:44,  3.34s/it] 17%|█▋        | 21/123 [01:13<05:50,  3.44s/it] 18%|█▊        | 22/123 [01:16<05:26,  3.23s/it] 19%|█▊        | 23/123 [01:19<05:16,  3.17s/it] 20%|█▉        | 24/123 [01:22<05:09,  3.13s/it] 20%|██        | 25/123 [01:25<05:09,  3.16s/it]{'loss': 3.5072, 'grad_norm': 2.0312564373016357, 'learning_rate': 2.5e-05, 'epoch': 0.24}
+{'loss': 2.9352, 'grad_norm': 1.670517086982727, 'learning_rate': 2.5e-05, 'epoch': 0.49}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.80it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.04it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.03it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:03,  1.01s/it][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.06s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.10it/s][A
+100%|██████████| 8/8 [00:07<00:00,  1.20it/s][A                                                
+                                             [A 20%|██        | 25/123 [01:33<05:09,  3.16s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.20it/s][A
+                                             [A 21%|██        | 26/123 [01:37<09:33,  5.91s/it] 22%|██▏       | 27/123 [01:41<08:16,  5.18s/it] 23%|██▎       | 28/123 [01:43<06:58,  4.41s/it] 24%|██▎       | 29/123 [01:46<06:14,  3.98s/it] 24%|██▍       | 30/123 [01:50<05:50,  3.76s/it]                                                 24%|██▍       | 30/123 [01:50<05:50,  3.76s/it] 25%|██▌       | 31/123 [01:53<05:39,  3.69s/it] 26%|██▌       | 32/123 [01:57<05:39,  3.73s/it] 27%|██▋       | 33/123 [02:01<05:38,  3.77s/it] 28%|██▊       | 34/123 [02:03<04:52,  3.29s/it] 28%|██▊       | 35/123 [02:06<04:51,  3.31s/it] 29%|██▉       | 36/123 [02:10<04:43,  3.26s/it] 30%|███       | 37/123 [02:13<04:43,  3.30s/it] 31%|███       | 38/123 [02:17<04:48,  3.40s/it] 32%|███▏      | 39/123 [02:19<04:20,  3.10s/it] 33%|███▎      | 40/123 [02:26<05:48,  4.19s/it]                                                 33%|███▎      | 40/123 [02:26<05:48,  4.19s/it] 33%|███▎      | 41/123 [02:27<04:24,  3.23s/it] 34%|███▍      | 42/123 [02:33<05:47,  4.29s/it] 35%|███▍      | 43/123 [02:37<05:21,  4.02s/it] 36%|███▌      | 44/123 [02:40<04:49,  3.66s/it] 37%|███▋      | 45/123 [02:42<04:26,  3.42s/it] 37%|███▋      | 46/123 [02:45<03:51,  3.01s/it] 38%|███▊      | 47/123 [02:47<03:32,  2.80s/it] 39%|███▉      | 48/123 [02:50<03:48,  3.05s/it] 40%|███▉      | 49/123 [02:54<03:52,  3.14s/it] 41%|████      | 50/123 [02:57<03:51,  3.17s/it]                                                 41%|████      | 50/123 [02:57<03:51,  3.17s/it]{'eval_loss': 2.602478265762329, 'eval_runtime': 8.4479, 'eval_samples_per_second': 14.205, 'eval_steps_per_second': 0.947, 'epoch': 0.61}
+{'loss': 2.5604, 'grad_norm': 1.545009970664978, 'learning_rate': 2.5e-05, 'epoch': 0.73}
+{'loss': 2.4256, 'grad_norm': 1.4540561437606812, 'learning_rate': 2.5e-05, 'epoch': 0.98}
+{'loss': 2.2287, 'grad_norm': 2.108032464981079, 'learning_rate': 2.5e-05, 'epoch': 1.22}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.80it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.03it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.02it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:03,  1.01s/it][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.06s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.09it/s][A
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A                                                
+                                             [A 41%|████      | 50/123 [03:06<03:51,  3.17s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A
+                                             [A 41%|████▏     | 51/123 [03:08<06:35,  5.49s/it] 42%|████▏     | 52/123 [03:12<05:51,  4.94s/it] 43%|████▎     | 53/123 [03:15<05:15,  4.50s/it] 44%|████▍     | 54/123 [03:19<04:52,  4.24s/it] 45%|████▍     | 55/123 [03:23<04:40,  4.12s/it] 46%|████▌     | 56/123 [03:30<05:41,  5.10s/it] 46%|████▋     | 57/123 [03:34<05:11,  4.72s/it] 47%|████▋     | 58/123 [03:37<04:36,  4.25s/it] 48%|████▊     | 59/123 [03:40<04:17,  4.03s/it] 49%|████▉     | 60/123 [03:43<03:54,  3.73s/it]                                                 49%|████▉     | 60/123 [03:43<03:54,  3.73s/it] 50%|████▉     | 61/123 [03:46<03:26,  3.34s/it] 50%|█████     | 62/123 [03:50<03:44,  3.68s/it] 51%|█████     | 63/123 [03:54<03:32,  3.55s/it] 52%|█████▏    | 64/123 [03:56<03:09,  3.20s/it] 53%|█████▎    | 65/123 [03:59<02:57,  3.07s/it] 54%|█████▎    | 66/123 [04:02<02:53,  3.04s/it] 54%|█████▍    | 67/123 [04:05<02:56,  3.15s/it] 55%|█████▌    | 68/123 [04:09<03:05,  3.37s/it] 56%|█████▌    | 69/123 [04:13<03:07,  3.46s/it] 57%|█████▋    | 70/123 [04:16<03:03,  3.46s/it]                                                 57%|█████▋    | 70/123 [04:16<03:03,  3.46s/it] 58%|█████▊    | 71/123 [04:18<02:39,  3.06s/it] 59%|█████▊    | 72/123 [04:22<02:44,  3.23s/it] 59%|█████▉    | 73/123 [04:26<02:50,  3.41s/it] 60%|██████    | 74/123 [04:29<02:51,  3.49s/it] 61%|██████    | 75/123 [04:32<02:27,  3.06s/it]{'eval_loss': 2.292456865310669, 'eval_runtime': 8.4608, 'eval_samples_per_second': 14.183, 'eval_steps_per_second': 0.946, 'epoch': 1.22}
+{'loss': 2.3481, 'grad_norm': 2.6607537269592285, 'learning_rate': 2.5e-05, 'epoch': 1.46}
+{'loss': 2.1105, 'grad_norm': 3.0512900352478027, 'learning_rate': 2.5e-05, 'epoch': 1.71}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.80it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.03it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.02it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:03,  1.01s/it][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.06s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.09it/s][A
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A                                                
+                                             [A 61%|██████    | 75/123 [04:40<02:27,  3.06s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A
+                                             [A 62%|██████▏   | 76/123 [04:43<04:27,  5.68s/it] 63%|██████▎   | 77/123 [04:46<03:44,  4.88s/it] 63%|██████▎   | 78/123 [04:50<03:18,  4.42s/it] 64%|██████▍   | 79/123 [04:53<02:55,  3.99s/it] 65%|██████▌   | 80/123 [04:56<02:44,  3.83s/it]                                                 65%|██████▌   | 80/123 [04:56<02:44,  3.83s/it] 66%|██████▌   | 81/123 [04:59<02:27,  3.51s/it] 67%|██████▋   | 82/123 [05:00<01:49,  2.68s/it] 67%|██████▋   | 83/123 [05:02<01:49,  2.73s/it] 68%|██████▊   | 84/123 [05:06<01:59,  3.06s/it] 69%|██████▉   | 85/123 [05:09<01:55,  3.04s/it] 70%|██████▉   | 86/123 [05:12<01:52,  3.04s/it] 71%|███████   | 87/123 [05:17<02:05,  3.47s/it] 72%|███████▏  | 88/123 [05:20<01:59,  3.40s/it] 72%|███████▏  | 89/123 [05:23<01:55,  3.40s/it] 73%|███████▎  | 90/123 [05:25<01:34,  2.87s/it]                                                 73%|███████▎  | 90/123 [05:25<01:34,  2.87s/it] 74%|███████▍  | 91/123 [05:29<01:39,  3.10s/it] 75%|███████▍  | 92/123 [05:32<01:40,  3.26s/it] 76%|███████▌  | 93/123 [05:36<01:38,  3.28s/it] 76%|███████▋  | 94/123 [05:39<01:34,  3.27s/it] 77%|███████▋  | 95/123 [05:42<01:33,  3.35s/it] 78%|███████▊  | 96/123 [05:46<01:31,  3.39s/it] 79%|███████▉  | 97/123 [05:50<01:30,  3.47s/it] 80%|███████▉  | 98/123 [05:53<01:25,  3.41s/it] 80%|████████  | 99/123 [05:57<01:24,  3.52s/it] 81%|████████▏ | 100/123 [06:00<01:19,  3.44s/it]                                                  81%|████████▏ | 100/123 [06:00<01:19,  3.44s/it]{'eval_loss': 2.0675876140594482, 'eval_runtime': 8.4619, 'eval_samples_per_second': 14.181, 'eval_steps_per_second': 0.945, 'epoch': 1.83}
+{'loss': 1.9499, 'grad_norm': 2.6246554851531982, 'learning_rate': 2.5e-05, 'epoch': 1.95}
+{'loss': 1.8006, 'grad_norm': 3.7443854808807373, 'learning_rate': 2.5e-05, 'epoch': 2.2}
+{'loss': 1.6417, 'grad_norm': 2.9467973709106445, 'learning_rate': 2.5e-05, 'epoch': 2.44}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.80it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.03it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.02it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:03,  1.01s/it][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.07s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.09it/s][A
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A                                                 
+                                             [A 81%|████████▏ | 100/123 [06:08<01:19,  3.44s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.19it/s][A
+                                             [A 82%|████████▏ | 101/123 [06:11<02:04,  5.65s/it] 83%|████████▎ | 102/123 [06:13<01:36,  4.57s/it] 84%|████████▎ | 103/123 [06:15<01:19,  3.96s/it] 85%|████████▍ | 104/123 [06:19<01:13,  3.88s/it] 85%|████████▌ | 105/123 [06:23<01:09,  3.87s/it] 86%|████████▌ | 106/123 [06:26<01:02,  3.65s/it] 87%|████████▋ | 107/123 [06:28<00:52,  3.28s/it] 88%|████████▊ | 108/123 [06:32<00:52,  3.48s/it] 89%|████████▊ | 109/123 [06:36<00:48,  3.44s/it] 89%|████████▉ | 110/123 [06:38<00:39,  3.02s/it]                                                  89%|████████▉ | 110/123 [06:38<00:39,  3.02s/it] 90%|█████████ | 111/123 [06:41<00:37,  3.16s/it] 91%|█████████ | 112/123 [06:48<00:46,  4.24s/it] 92%|█████████▏| 113/123 [06:50<00:36,  3.68s/it] 93%|█████████▎| 114/123 [06:54<00:32,  3.63s/it] 93%|█████████▎| 115/123 [06:58<00:29,  3.71s/it] 94%|█████████▍| 116/123 [07:02<00:26,  3.75s/it] 95%|█████████▌| 117/123 [07:09<00:29,  4.84s/it] 96%|█████████▌| 118/123 [07:12<00:21,  4.39s/it] 97%|█████████▋| 119/123 [07:15<00:15,  3.90s/it] 98%|█████████▊| 120/123 [07:19<00:11,  3.83s/it]                                                  98%|█████████▊| 120/123 [07:19<00:11,  3.83s/it] 98%|█████████▊| 121/123 [07:22<00:07,  3.53s/it] 99%|█████████▉| 122/123 [07:25<00:03,  3.49s/it]100%|██████████| 123/123 [07:26<00:00,  2.70s/it]                                                 100%|██████████| 123/123 [07:26<00:00,  2.70s/it]100%|██████████| 123/123 [07:26<00:00,  3.63s/it]
+{'eval_loss': 1.9214305877685547, 'eval_runtime': 8.4648, 'eval_samples_per_second': 14.176, 'eval_steps_per_second': 0.945, 'epoch': 2.44}
+{'loss': 1.6372, 'grad_norm': 4.38850736618042, 'learning_rate': 2.5e-05, 'epoch': 2.68}
+{'loss': 1.5799, 'grad_norm': 3.4690186977386475, 'learning_rate': 2.5e-05, 'epoch': 2.93}
+{'train_runtime': 446.2923, 'train_samples_per_second': 4.322, 'train_steps_per_second': 0.276, 'train_loss': 2.2182734768565107, 'epoch': 3.0}
+  0%|          | 0/8 [00:00<?, ?it/s] 25%|██▌       | 2/8 [00:01<00:03,  1.80it/s] 38%|███▊      | 3/8 [00:02<00:04,  1.03it/s] 50%|█████     | 4/8 [00:03<00:03,  1.02it/s] 62%|██████▎   | 5/8 [00:04<00:03,  1.01s/it] 75%|███████▌  | 6/8 [00:05<00:02,  1.07s/it] 88%|████████▊ | 7/8 [00:06<00:00,  1.09it/s]100%|██████████| 8/8 [00:07<00:00,  1.19it/s]100%|██████████| 8/8 [00:07<00:00,  1.09it/s]
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Log data saved to /home/ubuntu/projects/LLMRSResearch/LLAMA/run_1_log_data.json
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:08,  2.77s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:05<00:05,  2.56s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:07<00:02,  2.49s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  1.87s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:08<00:00,  2.13s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+LlamaConfig {
+  "_attn_implementation_autoset": true,
+  "_name_or_path": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": null,
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.47.0",
+  "use_cache": true,
+  "vocab_size": 128264
+}
+
+Adding pad:  <|pad|> 128256
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 643 examples [00:00, 110254.59 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 120 examples [00:00, 61417.51 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 41 examples [00:00, 33918.43 examples/s]
+/home/ubuntu/projects/LLMRSResearch/llamapeft2.py:191: FutureWarning: `tokenizer` is deprecated and removed starting from version 0.16.0 for `SFTTrainer.__init__`. Use `processing_class` instead.
+  trainer = SFTTrainer(
+trainable params: 167,772,160 || all params: 8,198,098,944 || trainable%: 2.0465
+Map:   0%|          | 0/643 [00:00<?, ? examples/s]Map: 100%|██████████| 643/643 [00:00<00:00, 14041.58 examples/s]
+Map:   0%|          | 0/120 [00:00<?, ? examples/s]Map: 100%|██████████| 120/120 [00:00<00:00, 8077.36 examples/s]
+  0%|          | 0/205 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  0%|          | 1/205 [00:03<10:47,  3.17s/it]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:05,  1.70s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:03<00:03,  1.88s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:05<00:01,  1.94s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.39s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.57s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+LlamaConfig {
+  "_attn_implementation_autoset": true,
+  "_name_or_path": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": null,
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.47.0",
+  "use_cache": true,
+  "vocab_size": 128264
+}
+
+Adding pad:  <|pad|> 128256
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 643 examples [00:00, 132573.24 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 120 examples [00:00, 61954.27 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 41 examples [00:00, 31851.54 examples/s]
+/home/ubuntu/projects/LLMRSResearch/llamapeft2.py:191: FutureWarning: `tokenizer` is deprecated and removed starting from version 0.16.0 for `SFTTrainer.__init__`. Use `processing_class` instead.
+  trainer = SFTTrainer(
+trainable params: 167,772,160 || all params: 8,198,098,944 || trainable%: 2.0465
+Map:   0%|          | 0/643 [00:00<?, ? examples/s]Map: 100%|██████████| 643/643 [00:00<00:00, 12884.59 examples/s]
+Map:   0%|          | 0/120 [00:00<?, ? examples/s]Map: 100%|██████████| 120/120 [00:00<00:00, 8912.52 examples/s]
+  0%|          | 0/205 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  0%|          | 1/205 [00:04<14:54,  4.38s/it]  1%|          | 2/205 [00:07<12:04,  3.57s/it]  1%|▏         | 3/205 [00:11<12:36,  3.74s/it]  2%|▏         | 4/205 [00:14<12:24,  3.70s/it]  2%|▏         | 5/205 [00:21<15:59,  4.80s/it]  3%|▎         | 6/205 [00:25<14:38,  4.41s/it]  3%|▎         | 7/205 [00:29<13:57,  4.23s/it]  4%|▍         | 8/205 [00:32<12:22,  3.77s/it]  4%|▍         | 9/205 [00:35<12:23,  3.79s/it]  5%|▍         | 10/205 [00:38<11:31,  3.55s/it]                                                  5%|▍         | 10/205 [00:38<11:31,  3.55s/it]  5%|▌         | 11/205 [00:41<10:21,  3.20s/it]  6%|▌         | 12/205 [00:44<10:02,  3.12s/it]  6%|▋         | 13/205 [00:47<10:24,  3.25s/it]  7%|▋         | 14/205 [00:51<10:46,  3.38s/it]  7%|▋         | 15/205 [00:54<09:54,  3.13s/it]  8%|▊         | 16/205 [01:01<13:53,  4.41s/it]  8%|▊         | 17/205 [01:05<13:14,  4.23s/it]  9%|▉         | 18/205 [01:08<12:16,  3.94s/it]  9%|▉         | 19/205 [01:11<11:40,  3.77s/it] 10%|▉         | 20/205 [01:14<10:20,  3.35s/it]                                                 10%|▉         | 20/205 [01:14<10:20,  3.35s/it] 10%|█         | 21/205 [01:17<10:06,  3.30s/it] 11%|█         | 22/205 [01:21<10:23,  3.41s/it] 11%|█         | 23/205 [01:23<09:45,  3.22s/it] 12%|█▏        | 24/205 [01:27<09:59,  3.31s/it] 12%|█▏        | 25/205 [01:32<11:33,  3.85s/it] 13%|█▎        | 26/205 [01:35<11:03,  3.71s/it] 13%|█▎        | 27/205 [01:38<10:00,  3.37s/it] 14%|█▎        | 28/205 [01:41<09:39,  3.27s/it] 14%|█▍        | 29/205 [01:44<09:43,  3.32s/it] 15%|█▍        | 30/205 [01:48<09:45,  3.34s/it]                                                 15%|█▍        | 30/205 [01:48<09:45,  3.34s/it] 15%|█▌        | 31/205 [01:51<09:38,  3.33s/it] 16%|█▌        | 32/205 [01:54<09:05,  3.15s/it] 16%|█▌        | 33/205 [01:57<09:06,  3.18s/it] 17%|█▋        | 34/205 [02:00<09:16,  3.25s/it] 17%|█▋        | 35/205 [02:03<08:48,  3.11s/it] 18%|█▊        | 36/205 [02:07<09:07,  3.24s/it] 18%|█▊        | 37/205 [02:10<09:10,  3.28s/it] 19%|█▊        | 38/205 [02:13<08:24,  3.02s/it] 19%|█▉        | 39/205 [02:16<08:55,  3.22s/it] 20%|█▉        | 40/205 [02:20<09:25,  3.43s/it]                                                 20%|█▉        | 40/205 [02:20<09:25,  3.43s/it] 20%|██        | 41/205 [02:21<07:15,  2.65s/it]{'loss': 3.5605, 'grad_norm': 3.6902976036071777, 'learning_rate': 4.761904761904762e-06, 'epoch': 0.24}
+{'loss': 3.4667, 'grad_norm': 3.6160833835601807, 'learning_rate': 9.523809523809525e-06, 'epoch': 0.49}
+{'loss': 3.0572, 'grad_norm': 2.7324180603027344, 'learning_rate': 9.941083847211765e-06, 'epoch': 0.73}
+{'loss': 2.7224, 'grad_norm': 2.164398670196533, 'learning_rate': 9.73920498530068e-06, 'epoch': 0.98}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.68it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.11it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s][A
+100%|██████████| 8/8 [00:06<00:00,  1.18it/s][A                                                
+                                             [A 20%|██        | 41/205 [02:29<07:15,  2.65s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.18it/s][A
+                                             [A 20%|██        | 42/205 [02:33<14:34,  5.37s/it] 21%|██        | 43/205 [02:37<13:16,  4.92s/it] 21%|██▏       | 44/205 [02:40<12:10,  4.54s/it] 22%|██▏       | 45/205 [02:43<10:46,  4.04s/it] 22%|██▏       | 46/205 [02:50<12:53,  4.86s/it] 23%|██▎       | 47/205 [02:53<11:22,  4.32s/it] 23%|██▎       | 48/205 [02:56<10:16,  3.93s/it] 24%|██▍       | 49/205 [02:59<09:42,  3.74s/it] 24%|██▍       | 50/205 [03:03<09:24,  3.64s/it]                                                 24%|██▍       | 50/205 [03:03<09:24,  3.64s/it] 25%|██▍       | 51/205 [03:06<09:04,  3.54s/it] 25%|██▌       | 52/205 [03:09<08:58,  3.52s/it] 26%|██▌       | 53/205 [03:13<09:11,  3.63s/it] 26%|██▋       | 54/205 [03:16<08:28,  3.37s/it] 27%|██▋       | 55/205 [03:19<07:44,  3.09s/it] 27%|██▋       | 56/205 [03:23<08:20,  3.36s/it] 28%|██▊       | 57/205 [03:26<08:17,  3.36s/it] 28%|██▊       | 58/205 [03:28<07:21,  3.01s/it] 29%|██▉       | 59/205 [03:31<07:36,  3.13s/it] 29%|██▉       | 60/205 [03:35<08:03,  3.34s/it]                                                 29%|██▉       | 60/205 [03:35<08:03,  3.34s/it] 30%|██▉       | 61/205 [03:39<08:04,  3.36s/it] 30%|███       | 62/205 [03:42<08:08,  3.42s/it] 31%|███       | 63/205 [03:45<07:51,  3.32s/it] 31%|███       | 64/205 [03:49<07:50,  3.34s/it] 32%|███▏      | 65/205 [03:53<08:11,  3.51s/it] 32%|███▏      | 66/205 [03:56<08:16,  3.57s/it] 33%|███▎      | 67/205 [04:00<08:16,  3.60s/it] 33%|███▎      | 68/205 [04:03<08:04,  3.54s/it] 34%|███▎      | 69/205 [04:07<08:07,  3.59s/it] 34%|███▍      | 70/205 [04:10<07:16,  3.24s/it]                                                 34%|███▍      | 70/205 [04:10<07:16,  3.24s/it] 35%|███▍      | 71/205 [04:12<06:54,  3.09s/it] 35%|███▌      | 72/205 [04:15<06:38,  2.99s/it] 36%|███▌      | 73/205 [04:18<06:50,  3.11s/it] 36%|███▌      | 74/205 [04:21<06:05,  2.79s/it] 37%|███▋      | 75/205 [04:23<06:05,  2.82s/it] 37%|███▋      | 76/205 [04:31<09:00,  4.19s/it] 38%|███▊      | 77/205 [04:34<08:11,  3.84s/it] 38%|███▊      | 78/205 [04:39<08:56,  4.22s/it] 39%|███▊      | 79/205 [04:41<07:34,  3.61s/it] 39%|███▉      | 80/205 [04:45<07:29,  3.59s/it]                                                 39%|███▉      | 80/205 [04:45<07:29,  3.59s/it] 40%|███▉      | 81/205 [04:48<07:21,  3.56s/it] 40%|████      | 82/205 [04:49<05:43,  2.79s/it]{'eval_loss': 2.6605780124664307, 'eval_runtime': 8.1521, 'eval_samples_per_second': 14.72, 'eval_steps_per_second': 0.981, 'epoch': 1.0}
+{'loss': 2.6686, 'grad_norm': 2.4561121463775635, 'learning_rate': 9.39950547114292e-06, 'epoch': 1.22}
+{'loss': 2.5732, 'grad_norm': 2.620382308959961, 'learning_rate': 8.931864094272663e-06, 'epoch': 1.46}
+{'loss': 2.4159, 'grad_norm': 2.9562759399414062, 'learning_rate': 8.349880317000083e-06, 'epoch': 1.71}
+{'loss': 2.349, 'grad_norm': 2.6633951663970947, 'learning_rate': 7.670478788929803e-06, 'epoch': 1.95}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.69it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.11it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s][A
+100%|██████████| 8/8 [00:06<00:00,  1.18it/s][A                                                
+                                             [A 40%|████      | 82/205 [04:57<05:43,  2.79s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.18it/s][A
+                                             [A 40%|████      | 83/205 [05:01<11:07,  5.47s/it] 41%|████      | 84/205 [05:05<10:04,  4.99s/it] 41%|████▏     | 85/205 [05:08<09:12,  4.61s/it] 42%|████▏     | 86/205 [05:12<08:31,  4.29s/it] 42%|████▏     | 87/205 [05:15<07:40,  3.90s/it] 43%|████▎     | 88/205 [05:18<07:17,  3.74s/it] 43%|████▎     | 89/205 [05:22<07:07,  3.68s/it] 44%|████▍     | 90/205 [05:24<06:17,  3.28s/it]                                                 44%|████▍     | 90/205 [05:24<06:17,  3.28s/it] 44%|████▍     | 91/205 [05:28<06:35,  3.47s/it] 45%|████▍     | 92/205 [05:32<06:30,  3.45s/it] 45%|████▌     | 93/205 [05:34<05:39,  3.04s/it] 46%|████▌     | 94/205 [05:36<05:14,  2.83s/it] 46%|████▋     | 95/205 [05:40<05:38,  3.08s/it] 47%|████▋     | 96/205 [05:42<05:14,  2.88s/it] 47%|████▋     | 97/205 [05:46<05:41,  3.16s/it] 48%|████▊     | 98/205 [05:53<07:54,  4.44s/it] 48%|████▊     | 99/205 [05:57<07:18,  4.14s/it] 49%|████▉     | 100/205 [06:01<07:05,  4.05s/it]                                                  49%|████▉     | 100/205 [06:01<07:05,  4.05s/it] 49%|████▉     | 101/205 [06:03<06:03,  3.49s/it] 50%|████▉     | 102/205 [06:07<06:14,  3.64s/it] 50%|█████     | 103/205 [06:09<05:34,  3.28s/it] 51%|█████     | 104/205 [06:13<05:31,  3.28s/it] 51%|█████     | 105/205 [06:16<05:39,  3.40s/it] 52%|█████▏    | 106/205 [06:20<05:45,  3.49s/it] 52%|█████▏    | 107/205 [06:22<05:00,  3.06s/it] 53%|█████▎    | 108/205 [06:25<04:49,  2.99s/it] 53%|█████▎    | 109/205 [06:28<04:46,  2.98s/it] 54%|█████▎    | 110/205 [06:31<04:51,  3.07s/it]                                                  54%|█████▎    | 110/205 [06:31<04:51,  3.07s/it] 54%|█████▍    | 111/205 [06:34<04:40,  2.98s/it] 55%|█████▍    | 112/205 [06:36<04:09,  2.68s/it] 55%|█████▌    | 113/205 [06:39<04:20,  2.83s/it] 56%|█████▌    | 114/205 [06:44<05:19,  3.51s/it] 56%|█████▌    | 115/205 [06:47<05:12,  3.47s/it] 57%|█████▋    | 116/205 [06:51<05:06,  3.44s/it] 57%|█████▋    | 117/205 [06:55<05:13,  3.57s/it] 58%|█████▊    | 118/205 [06:57<04:45,  3.28s/it] 58%|█████▊    | 119/205 [07:00<04:30,  3.14s/it] 59%|█████▊    | 120/205 [07:03<04:34,  3.23s/it]                                                  59%|█████▊    | 120/205 [07:03<04:34,  3.23s/it] 59%|█████▉    | 121/205 [07:06<04:16,  3.05s/it] 60%|█████▉    | 122/205 [07:09<04:06,  2.98s/it] 60%|██████    | 123/205 [07:10<03:17,  2.41s/it]{'eval_loss': 2.3042869567871094, 'eval_runtime': 8.1564, 'eval_samples_per_second': 14.712, 'eval_steps_per_second': 0.981, 'epoch': 2.0}
+{'loss': 2.2724, 'grad_norm': 3.2151732444763184, 'learning_rate': 6.913417161825449e-06, 'epoch': 2.2}
+{'loss': 2.2212, 'grad_norm': 2.9045982360839844, 'learning_rate': 6.100711518038828e-06, 'epoch': 2.44}
+{'loss': 2.0725, 'grad_norm': 3.2126898765563965, 'learning_rate': 5.255996121599167e-06, 'epoch': 2.68}
+{'loss': 2.0199, 'grad_norm': 2.886244773864746, 'learning_rate': 4.403836111018346e-06, 'epoch': 2.93}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.69it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.11it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s][A
+100%|██████████| 8/8 [00:06<00:00,  1.18it/s][A                                                 
+                                             [A 60%|██████    | 123/205 [07:18<03:17,  2.41s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.18it/s][A
+                                             [A 60%|██████    | 124/205 [07:22<06:59,  5.18s/it] 61%|██████    | 125/205 [07:27<06:52,  5.16s/it] 61%|██████▏   | 126/205 [07:30<05:56,  4.51s/it] 62%|██████▏   | 127/205 [07:32<05:06,  3.93s/it] 62%|██████▏   | 128/205 [07:34<04:17,  3.34s/it] 63%|██████▎   | 129/205 [07:38<04:15,  3.36s/it] 63%|██████▎   | 130/205 [07:41<04:04,  3.26s/it]                                                  63%|██████▎   | 130/205 [07:41<04:04,  3.26s/it] 64%|██████▍   | 131/205 [07:44<04:04,  3.31s/it] 64%|██████▍   | 132/205 [07:48<04:04,  3.35s/it] 65%|██████▍   | 133/205 [07:55<05:28,  4.57s/it] 65%|██████▌   | 134/205 [07:59<05:09,  4.35s/it] 66%|██████▌   | 135/205 [08:02<04:48,  4.12s/it] 66%|██████▋   | 136/205 [08:05<04:13,  3.67s/it] 67%|██████▋   | 137/205 [08:08<04:03,  3.58s/it] 67%|██████▋   | 138/205 [08:12<03:59,  3.58s/it] 68%|██████▊   | 139/205 [08:16<03:54,  3.55s/it] 68%|██████▊   | 140/205 [08:19<03:59,  3.68s/it]                                                  68%|██████▊   | 140/205 [08:19<03:59,  3.68s/it] 69%|██████▉   | 141/205 [08:23<03:58,  3.73s/it] 69%|██████▉   | 142/205 [08:25<03:22,  3.21s/it] 70%|██████▉   | 143/205 [08:28<03:14,  3.13s/it] 70%|███████   | 144/205 [08:32<03:15,  3.20s/it] 71%|███████   | 145/205 [08:35<03:20,  3.34s/it] 71%|███████   | 146/205 [08:39<03:17,  3.35s/it] 72%|███████▏  | 147/205 [08:43<03:22,  3.49s/it] 72%|███████▏  | 148/205 [08:46<03:22,  3.56s/it] 73%|███████▎  | 149/205 [08:50<03:24,  3.65s/it] 73%|███████▎  | 150/205 [08:53<03:14,  3.54s/it]                                                  73%|███████▎  | 150/205 [08:53<03:14,  3.54s/it] 74%|███████▎  | 151/205 [08:57<03:13,  3.59s/it] 74%|███████▍  | 152/205 [09:00<03:00,  3.41s/it] 75%|███████▍  | 153/205 [09:03<02:48,  3.25s/it] 75%|███████▌  | 154/205 [09:06<02:39,  3.13s/it] 76%|███████▌  | 155/205 [09:09<02:42,  3.26s/it] 76%|███████▌  | 156/205 [09:12<02:35,  3.17s/it] 77%|███████▋  | 157/205 [09:19<03:24,  4.25s/it] 77%|███████▋  | 158/205 [09:23<03:09,  4.04s/it] 78%|███████▊  | 159/205 [09:25<02:48,  3.66s/it] 78%|███████▊  | 160/205 [09:28<02:28,  3.30s/it]                                                  78%|███████▊  | 160/205 [09:28<02:28,  3.30s/it] 79%|███████▊  | 161/205 [09:32<02:33,  3.48s/it] 79%|███████▉  | 162/205 [09:35<02:26,  3.41s/it] 80%|███████▉  | 163/205 [09:38<02:21,  3.37s/it] 80%|████████  | 164/205 [09:39<01:45,  2.58s/it]{'eval_loss': 2.144099712371826, 'eval_runtime': 8.1528, 'eval_samples_per_second': 14.719, 'eval_steps_per_second': 0.981, 'epoch': 3.0}
+{'loss': 1.936, 'grad_norm': 3.1494927406311035, 'learning_rate': 3.5690131213682943e-06, 'epoch': 3.17}
+{'loss': 1.9444, 'grad_norm': 3.2643163204193115, 'learning_rate': 2.77580461042958e-06, 'epoch': 3.41}
+{'loss': 1.8883, 'grad_norm': 3.391040802001953, 'learning_rate': 2.0472778468019456e-06, 'epoch': 3.66}
+{'loss': 1.9822, 'grad_norm': 3.663024425506592, 'learning_rate': 1.404619091483546e-06, 'epoch': 3.9}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.68it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.11it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s][A
+100%|██████████| 8/8 [00:06<00:00,  1.18it/s][A                                                 
+                                             [A 80%|████████  | 164/205 [09:47<01:45,  2.58s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.18it/s][A
+                                             [A 80%|████████  | 165/205 [09:51<03:31,  5.28s/it] 81%|████████  | 166/205 [09:53<02:52,  4.42s/it] 81%|████████▏ | 167/205 [09:56<02:26,  3.87s/it] 82%|████████▏ | 168/205 [09:59<02:19,  3.77s/it] 82%|████████▏ | 169/205 [10:03<02:14,  3.75s/it] 83%|████████▎ | 170/205 [10:05<01:57,  3.36s/it]                                                  83%|████████▎ | 170/205 [10:05<01:57,  3.36s/it] 83%|████████▎ | 171/205 [10:07<01:40,  2.96s/it] 84%|████████▍ | 172/205 [10:11<01:43,  3.13s/it] 84%|████████▍ | 173/205 [10:15<01:47,  3.35s/it] 85%|████████▍ | 174/205 [10:18<01:40,  3.25s/it] 85%|████████▌ | 175/205 [10:22<01:43,  3.45s/it] 86%|████████▌ | 176/205 [10:29<02:14,  4.64s/it] 86%|████████▋ | 177/205 [10:33<02:02,  4.36s/it] 87%|████████▋ | 178/205 [10:36<01:49,  4.07s/it] 87%|████████▋ | 179/205 [10:40<01:42,  3.95s/it] 88%|████████▊ | 180/205 [10:45<01:47,  4.30s/it]                                                  88%|████████▊ | 180/205 [10:45<01:47,  4.30s/it] 88%|████████▊ | 181/205 [10:48<01:30,  3.79s/it] 89%|████████▉ | 182/205 [10:51<01:24,  3.66s/it] 89%|████████▉ | 183/205 [10:54<01:19,  3.63s/it] 90%|████████▉ | 184/205 [10:58<01:13,  3.50s/it] 90%|█████████ | 185/205 [11:00<01:02,  3.15s/it] 91%|█████████ | 186/205 [11:07<01:20,  4.24s/it] 91%|█████████ | 187/205 [11:09<01:06,  3.69s/it] 92%|█████████▏| 188/205 [11:12<00:59,  3.52s/it] 92%|█████████▏| 189/205 [11:15<00:52,  3.30s/it] 93%|█████████▎| 190/205 [11:18<00:49,  3.32s/it]                                                  93%|█████████▎| 190/205 [11:18<00:49,  3.32s/it] 93%|█████████▎| 191/205 [11:22<00:46,  3.35s/it] 94%|█████████▎| 192/205 [11:25<00:43,  3.33s/it] 94%|█████████▍| 193/205 [11:28<00:37,  3.16s/it] 95%|█████████▍| 194/205 [11:30<00:32,  2.93s/it] 95%|█████████▌| 195/205 [11:33<00:29,  2.92s/it] 96%|█████████▌| 196/205 [11:37<00:28,  3.20s/it] 96%|█████████▌| 197/205 [11:40<00:26,  3.26s/it] 97%|█████████▋| 198/205 [11:44<00:23,  3.43s/it] 97%|█████████▋| 199/205 [11:48<00:20,  3.42s/it] 98%|█████████▊| 200/205 [11:51<00:17,  3.46s/it]                                                  98%|█████████▊| 200/205 [11:51<00:17,  3.46s/it] 98%|█████████▊| 201/205 [11:54<00:13,  3.33s/it] 99%|█████████▊| 202/205 [11:58<00:10,  3.53s/it] 99%|█████████▉| 203/205 [12:02<00:07,  3.63s/it]100%|█████████▉| 204/205 [12:05<00:03,  3.43s/it]100%|██████████| 205/205 [12:06<00:00,  2.61s/it]{'eval_loss': 2.0780460834503174, 'eval_runtime': 8.1533, 'eval_samples_per_second': 14.718, 'eval_steps_per_second': 0.981, 'epoch': 4.0}
+{'loss': 1.8535, 'grad_norm': 3.8958969116210938, 'learning_rate': 8.665174809655707e-07, 'epoch': 4.15}
+{'loss': 1.8354, 'grad_norm': 3.1099843978881836, 'learning_rate': 4.486215291161894e-07, 'epoch': 4.39}
+{'loss': 1.8558, 'grad_norm': 3.746378183364868, 'learning_rate': 1.6308405330324294e-07, 'epoch': 4.63}
+{'loss': 1.8943, 'grad_norm': 3.344829559326172, 'learning_rate': 1.820875874300021e-08, 'epoch': 4.88}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.68it/s][A
+ 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.10it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s][A
+100%|██████████| 8/8 [00:06<00:00,  1.18it/s][A                                                 
+                                             [A100%|██████████| 205/205 [12:14<00:00,  2.61s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.18it/s][A
+                                             [A                                                 100%|██████████| 205/205 [12:14<00:00,  2.61s/it]100%|██████████| 205/205 [12:14<00:00,  3.58s/it]
+{'eval_loss': 2.071962833404541, 'eval_runtime': 8.1589, 'eval_samples_per_second': 14.708, 'eval_steps_per_second': 0.981, 'epoch': 5.0}
+{'train_runtime': 734.4706, 'train_samples_per_second': 4.377, 'train_steps_per_second': 0.279, 'train_loss': 2.319851414750262, 'epoch': 5.0}
+  0%|          | 0/8 [00:00<?, ?it/s] 25%|██▌       | 2/8 [00:01<00:03,  1.68it/s] 38%|███▊      | 3/8 [00:02<00:04,  1.21it/s] 50%|█████     | 4/8 [00:03<00:03,  1.11it/s] 62%|██████▎   | 5/8 [00:04<00:02,  1.06it/s] 75%|███████▌  | 6/8 [00:05<00:02,  1.01s/it] 88%|████████▊ | 7/8 [00:06<00:00,  1.14it/s]100%|██████████| 8/8 [00:06<00:00,  1.18it/s]100%|██████████| 8/8 [00:07<00:00,  1.12it/s]
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Log data saved to /home/ubuntu/projects/LLMRSResearch/LLAMA/run_1_log_data.json
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:02<00:06,  2.16s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:04<00:04,  2.15s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:06<00:02,  2.09s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.53s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:06<00:00,  1.75s/it]
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+The new lm_head weights will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+LlamaConfig {
+  "_attn_implementation_autoset": true,
+  "_name_or_path": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 128000,
+  "eos_token_id": 128009,
+  "head_dim": 128,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 14336,
+  "max_position_embeddings": 8192,
+  "mlp_bias": false,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 8,
+  "pretraining_tp": 1,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": null,
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 500000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.47.0",
+  "use_cache": true,
+  "vocab_size": 128264
+}
+
+Adding pad:  <|pad|> 128256
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 643 examples [00:00, 109640.52 examples/s]
+Generating validation split: 0 examples [00:00, ? examples/s]Generating validation split: 120 examples [00:00, 63453.92 examples/s]
+Generating test split: 0 examples [00:00, ? examples/s]Generating test split: 41 examples [00:00, 35968.72 examples/s]
+/home/ubuntu/projects/LLMRSResearch/llamapeft2.py:191: FutureWarning: `tokenizer` is deprecated and removed starting from version 0.16.0 for `SFTTrainer.__init__`. Use `processing_class` instead.
+  trainer = SFTTrainer(
+trainable params: 167,772,160 || all params: 8,198,098,944 || trainable%: 2.0465
+Map:   0%|          | 0/643 [00:00<?, ? examples/s]Map: 100%|██████████| 643/643 [00:00<00:00, 13838.68 examples/s]
+Map:   0%|          | 0/120 [00:00<?, ? examples/s]Map: 100%|██████████| 120/120 [00:00<00:00, 8241.90 examples/s]
+  0%|          | 0/123 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:632: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  return fn(*args, **kwargs)
+  1%|          | 1/123 [00:04<08:50,  4.35s/it]  2%|▏         | 2/123 [00:07<07:55,  3.93s/it]  2%|▏         | 3/123 [00:13<08:54,  4.46s/it]  3%|▎         | 4/123 [00:16<07:42,  3.89s/it]  4%|▍         | 5/123 [00:19<07:18,  3.71s/it]  5%|▍         | 6/123 [00:21<06:08,  3.15s/it]  6%|▌         | 7/123 [00:24<05:55,  3.06s/it]  7%|▋         | 8/123 [00:26<05:28,  2.86s/it]  7%|▋         | 9/123 [00:30<05:49,  3.07s/it]  8%|▊         | 10/123 [00:33<05:49,  3.10s/it]                                                  8%|▊         | 10/123 [00:33<05:49,  3.10s/it]  9%|▉         | 11/123 [00:36<05:57,  3.19s/it] 10%|▉         | 12/123 [00:40<05:53,  3.18s/it] 11%|█         | 13/123 [00:46<07:48,  4.26s/it] 11%|█▏        | 14/123 [00:50<07:14,  3.99s/it] 12%|█▏        | 15/123 [00:54<07:06,  3.95s/it] 13%|█▎        | 16/123 [00:57<06:54,  3.87s/it] 14%|█▍        | 17/123 [01:01<06:35,  3.73s/it] 15%|█▍        | 18/123 [01:04<06:25,  3.67s/it] 15%|█▌        | 19/123 [01:08<06:21,  3.67s/it] 16%|█▋        | 20/123 [01:10<05:25,  3.16s/it]                                                 16%|█▋        | 20/123 [01:10<05:25,  3.16s/it] 17%|█▋        | 21/123 [01:14<05:43,  3.36s/it] 18%|█▊        | 22/123 [01:16<05:22,  3.19s/it] 19%|█▊        | 23/123 [01:20<05:17,  3.18s/it] 20%|█▉        | 24/123 [01:23<05:29,  3.32s/it] 20%|██        | 25/123 [01:27<05:30,  3.37s/it]{'loss': 3.1374, 'grad_norm': 2.2415122985839844, 'learning_rate': 2.5e-05, 'epoch': 0.24}
+{'loss': 2.7335, 'grad_norm': 2.6722187995910645, 'learning_rate': 2.5e-05, 'epoch': 0.49}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.79it/s][A
+ 38%|███▊      | 3/8 [00:02<00:03,  1.31it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.16it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.04it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.03s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:01,  1.14s/it][A
+100%|██████████| 8/8 [00:07<00:00,  1.12it/s][A                                                
+                                             [A 20%|██        | 25/123 [01:35<05:30,  3.37s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.12it/s][A
+                                             [A 21%|██        | 26/123 [01:38<09:24,  5.82s/it] 22%|██▏       | 27/123 [01:41<07:58,  4.98s/it] 23%|██▎       | 28/123 [01:45<07:22,  4.66s/it] 24%|██▎       | 29/123 [01:49<06:58,  4.45s/it] 24%|██▍       | 30/123 [01:53<06:37,  4.28s/it]                                                 24%|██▍       | 30/123 [01:53<06:37,  4.28s/it] 25%|██▌       | 31/123 [01:56<05:56,  3.88s/it] 26%|██▌       | 32/123 [01:59<05:33,  3.66s/it] 27%|██▋       | 33/123 [02:02<05:13,  3.48s/it] 28%|██▊       | 34/123 [02:05<04:57,  3.35s/it] 28%|██▊       | 35/123 [02:13<06:41,  4.56s/it] 29%|██▉       | 36/123 [02:16<06:10,  4.26s/it] 30%|███       | 37/123 [02:20<05:41,  3.97s/it] 31%|███       | 38/123 [02:23<05:24,  3.82s/it] 32%|███▏      | 39/123 [02:25<04:36,  3.30s/it] 33%|███▎      | 40/123 [02:29<04:47,  3.47s/it]                                                 33%|███▎      | 40/123 [02:29<04:47,  3.47s/it] 33%|███▎      | 41/123 [02:30<03:39,  2.68s/it] 34%|███▍      | 42/123 [02:33<03:39,  2.71s/it] 35%|███▍      | 43/123 [02:36<03:52,  2.90s/it] 36%|███▌      | 44/123 [02:39<04:00,  3.05s/it] 37%|███▋      | 45/123 [02:42<04:00,  3.09s/it] 37%|███▋      | 46/123 [02:46<04:18,  3.36s/it] 38%|███▊      | 47/123 [02:50<04:19,  3.41s/it] 39%|███▉      | 48/123 [02:53<04:00,  3.21s/it] 40%|███▉      | 49/123 [02:56<04:08,  3.36s/it] 41%|████      | 50/123 [03:00<04:03,  3.34s/it]                                                 41%|████      | 50/123 [03:00<04:03,  3.34s/it]{'eval_loss': 2.51395320892334, 'eval_runtime': 8.2649, 'eval_samples_per_second': 14.519, 'eval_steps_per_second': 0.968, 'epoch': 0.61}
+{'loss': 2.3981, 'grad_norm': 2.6155595779418945, 'learning_rate': 2.5e-05, 'epoch': 0.73}
+{'loss': 2.3994, 'grad_norm': 2.435828447341919, 'learning_rate': 2.5e-05, 'epoch': 0.98}
+{'loss': 1.9962, 'grad_norm': 2.9564907550811768, 'learning_rate': 2.5e-05, 'epoch': 1.22}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.79it/s][A
+ 38%|███▊      | 3/8 [00:02<00:03,  1.31it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.15it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.03it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.03s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:01,  1.14s/it][A
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A                                                
+                                             [A 41%|████      | 50/123 [03:08<04:03,  3.34s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A
+                                             [A 41%|████▏     | 51/123 [03:15<08:26,  7.04s/it] 42%|████▏     | 52/123 [03:18<06:55,  5.86s/it] 43%|████▎     | 53/123 [03:20<05:24,  4.64s/it] 44%|████▍     | 54/123 [03:24<04:50,  4.21s/it] 45%|████▍     | 55/123 [03:27<04:21,  3.85s/it] 46%|████▌     | 56/123 [03:30<04:13,  3.79s/it] 46%|████▋     | 57/123 [03:34<04:04,  3.70s/it] 47%|████▋     | 58/123 [03:37<03:57,  3.65s/it] 48%|████▊     | 59/123 [03:41<03:57,  3.71s/it] 49%|████▉     | 60/123 [03:44<03:48,  3.63s/it]                                                 49%|████▉     | 60/123 [03:44<03:48,  3.63s/it] 50%|████▉     | 61/123 [03:47<03:33,  3.44s/it] 50%|█████     | 62/123 [03:50<03:11,  3.14s/it] 51%|█████     | 63/123 [03:52<02:54,  2.90s/it] 52%|█████▏    | 64/123 [03:57<03:30,  3.56s/it] 53%|█████▎    | 65/123 [04:00<03:07,  3.23s/it] 54%|█████▎    | 66/123 [04:03<03:11,  3.36s/it] 54%|█████▍    | 67/123 [04:07<03:15,  3.50s/it] 55%|█████▌    | 68/123 [04:11<03:13,  3.52s/it] 56%|█████▌    | 69/123 [04:15<03:16,  3.64s/it] 57%|█████▋    | 70/123 [04:22<04:02,  4.58s/it]                                                 57%|█████▋    | 70/123 [04:22<04:02,  4.58s/it] 58%|█████▊    | 71/123 [04:24<03:22,  3.89s/it] 59%|█████▊    | 72/123 [04:26<02:57,  3.49s/it] 59%|█████▉    | 73/123 [04:29<02:47,  3.35s/it] 60%|██████    | 74/123 [04:33<02:44,  3.36s/it] 61%|██████    | 75/123 [04:37<02:48,  3.51s/it]{'eval_loss': 2.1967575550079346, 'eval_runtime': 8.2824, 'eval_samples_per_second': 14.489, 'eval_steps_per_second': 0.966, 'epoch': 1.22}
+{'loss': 1.9539, 'grad_norm': 3.622462034225464, 'learning_rate': 2.5e-05, 'epoch': 1.46}
+{'loss': 1.8643, 'grad_norm': 2.6792969703674316, 'learning_rate': 2.5e-05, 'epoch': 1.71}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.79it/s][A
+ 38%|███▊      | 3/8 [00:02<00:03,  1.31it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.15it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.03it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.03s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:01,  1.14s/it][A
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A                                                
+                                             [A 61%|██████    | 75/123 [04:45<02:48,  3.51s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A
+                                             [A 62%|██████▏   | 76/123 [04:49<04:44,  6.05s/it] 63%|██████▎   | 77/123 [04:52<04:01,  5.25s/it] 63%|██████▎   | 78/123 [04:55<03:29,  4.66s/it] 64%|██████▍   | 79/123 [04:59<03:14,  4.42s/it] 65%|██████▌   | 80/123 [05:03<02:56,  4.10s/it]                                                 65%|██████▌   | 80/123 [05:03<02:56,  4.10s/it] 66%|██████▌   | 81/123 [05:06<02:40,  3.82s/it] 67%|██████▋   | 82/123 [05:07<01:59,  2.93s/it] 67%|██████▋   | 83/123 [05:10<02:02,  3.06s/it] 68%|██████▊   | 84/123 [05:13<02:04,  3.20s/it] 69%|██████▉   | 85/123 [05:17<02:01,  3.19s/it] 70%|██████▉   | 86/123 [05:20<02:05,  3.39s/it] 71%|███████   | 87/123 [05:24<02:04,  3.47s/it] 72%|███████▏  | 88/123 [05:27<01:50,  3.16s/it] 72%|███████▏  | 89/123 [05:34<02:30,  4.44s/it] 73%|███████▎  | 90/123 [05:37<02:17,  4.17s/it]                                                 73%|███████▎  | 90/123 [05:37<02:17,  4.17s/it] 74%|███████▍  | 91/123 [05:41<02:08,  4.01s/it] 75%|███████▍  | 92/123 [05:45<02:03,  3.97s/it] 76%|███████▌  | 93/123 [05:48<01:49,  3.64s/it] 76%|███████▋  | 94/123 [05:50<01:34,  3.25s/it] 77%|███████▋  | 95/123 [05:53<01:26,  3.10s/it] 78%|███████▊  | 96/123 [05:56<01:25,  3.18s/it] 79%|███████▉  | 97/123 [06:00<01:24,  3.25s/it] 80%|███████▉  | 98/123 [06:04<01:26,  3.45s/it] 80%|████████  | 99/123 [06:06<01:16,  3.19s/it] 81%|████████▏ | 100/123 [06:10<01:15,  3.28s/it]                                                  81%|████████▏ | 100/123 [06:10<01:15,  3.28s/it]{'eval_loss': 1.9764491319656372, 'eval_runtime': 8.2802, 'eval_samples_per_second': 14.492, 'eval_steps_per_second': 0.966, 'epoch': 1.83}
+{'loss': 1.7148, 'grad_norm': 3.832206964492798, 'learning_rate': 2.5e-05, 'epoch': 1.95}
+{'loss': 1.3684, 'grad_norm': 4.20926570892334, 'learning_rate': 2.5e-05, 'epoch': 2.2}
+{'loss': 1.3041, 'grad_norm': 4.035367012023926, 'learning_rate': 2.5e-05, 'epoch': 2.44}
+
+  0%|          | 0/8 [00:00<?, ?it/s][A
+ 25%|██▌       | 2/8 [00:01<00:03,  1.79it/s][A
+ 38%|███▊      | 3/8 [00:02<00:03,  1.31it/s][A
+ 50%|█████     | 4/8 [00:03<00:03,  1.15it/s][A
+ 62%|██████▎   | 5/8 [00:04<00:02,  1.03it/s][A
+ 75%|███████▌  | 6/8 [00:05<00:02,  1.03s/it][A
+ 88%|████████▊ | 7/8 [00:06<00:01,  1.14s/it][A
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A                                                 
+                                             [A 81%|████████▏ | 100/123 [06:18<01:15,  3.28s/it]
+100%|██████████| 8/8 [00:07<00:00,  1.11it/s][A
+                                             [A 82%|████████▏ | 101/123 [06:21<02:07,  5.80s/it] 83%|████████▎ | 102/123 [06:25<01:48,  5.15s/it] 84%|████████▎ | 103/123 [06:28<01:29,  4.49s/it] 85%|████████▍ | 104/123 [06:31<01:17,  4.06s/it] 85%|████████▌ | 105/123 [06:34<01:04,  3.61s/it] 86%|████████▌ | 106/123 [06:37<01:01,  3.62s/it] 87%|████████▋ | 107/123 [06:40<00:55,  3.45s/it] 88%|████████▊ | 108/123 [06:44<00:54,  3.61s/it] 89%|████████▊ | 109/123 [06:47<00:48,  3.49s/it] 89%|████████▉ | 110/123 [06:51<00:43,  3.35s/it]                                                  89%|████████▉ | 110/123 [06:51<00:43,  3.35s/it] 90%|█████████ | 111/123 [06:54<00:42,  3.51s/it] 91%|█████████ | 112/123 [06:58<00:38,  3.47s/it] 92%|█████████▏| 113/123 [07:00<00:32,  3.21s/it] 93%|█████████▎| 114/123 [07:04<00:30,  3.35s/it] 93%|█████████▎| 115/123 [07:08<00:27,  3.39s/it] 94%|█████████▍| 116/123 [07:11<00:23,  3.36s/it] 95%|█████████▌| 117/123 [07:14<00:19,  3.20s/it] 96%|█████████▌| 118/123 [07:17<00:16,  3.26s/it] 97%|█████████▋| 119/123 [07:24<00:17,  4.32s/it] 98%|█████████▊| 120/123 [07:27<00:12,  4.09s/it]                                                  98%|█████████▊| 120/123 [07:27<00:12,  4.09s/it] 98%|█████████▊| 121/123 [07:30<00:07,  3.59s/it] 99%|█████████▉| 122/123 [07:32<00:03,  3.24s/it]100%|██████████| 123/123 [07:33<00:00,  2.60s/it]                                                 100%|██████████| 123/123 [07:33<00:00,  2.60s/it]100%|██████████| 123/123 [07:33<00:00,  3.69s/it]
+{'eval_loss': 1.8801476955413818, 'eval_runtime': 8.2752, 'eval_samples_per_second': 14.501, 'eval_steps_per_second': 0.967, 'epoch': 2.44}
+{'loss': 1.2596, 'grad_norm': 4.550288677215576, 'learning_rate': 2.5e-05, 'epoch': 2.68}
+{'loss': 1.1821, 'grad_norm': 3.1879591941833496, 'learning_rate': 2.5e-05, 'epoch': 2.93}
+{'train_runtime': 453.8628, 'train_samples_per_second': 4.25, 'train_steps_per_second': 0.271, 'train_loss': 1.9264703727350003, 'epoch': 3.0}
+  0%|          | 0/8 [00:00<?, ?it/s] 25%|██▌       | 2/8 [00:01<00:03,  1.79it/s] 38%|███▊      | 3/8 [00:02<00:03,  1.31it/s] 50%|█████     | 4/8 [00:03<00:03,  1.15it/s] 62%|██████▎   | 5/8 [00:04<00:02,  1.03it/s] 75%|███████▌  | 6/8 [00:05<00:02,  1.03s/it] 88%|████████▊ | 7/8 [00:06<00:01,  1.14s/it]100%|██████████| 8/8 [00:07<00:00,  1.11it/s]100%|██████████| 8/8 [00:07<00:00,  1.08it/s]
+/home/ubuntu/miniconda3/envs/LLMtest/lib/python3.12/site-packages/peft/utils/save_and_load.py:260: UserWarning: Setting `save_embedding_layers` to `True` as the embedding layer has been resized during finetuning.
+  warnings.warn(
+Log data saved to /home/ubuntu/projects/LLMRSResearch/LLAMA/run_2_log_data.json

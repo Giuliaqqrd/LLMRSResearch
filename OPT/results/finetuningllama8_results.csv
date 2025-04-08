@@ -1,0 +1,39 @@
+run_name,learning_rate,scheduler,train_loss,eval_loss,perplexity
+run_15_r16_alpha32_lr5e-05_optpaged_adamw_8bit_ep10,5e-05,linear,0.9347950760747346,2.553805112838745,12.85592909168738
+run_2_r8_alpha16_lr5e-05_optpaged_adamw_8bit_ep3,5e-05,cosine,2.584806375100579,2.5704548358917236,13.071768598550895
+run_3_r8_alpha16_lr5e-05_optpaged_adamw_8bit_ep10,5e-05,linear,1.0979887223579514,2.580629587173462,13.205449524659944
+run_21_r16_alpha32_lr1e-05_optpaged_adamw_8bit_ep3,1e-05,linear,3.200920310938302,3.0810177326202393,21.780557904359316
+run_12_r8_alpha16_lr1e-05_optpaged_adamw_8bit_ep10,1e-05,cosine,2.6689265694416746,2.663181781768799,14.341849213427961
+run_17_r16_alpha32_lr3e-05_optpaged_adamw_8bit_ep3,3e-05,linear,2.690679756128732,2.5975565910339355,13.430880774979256
+run_5_r8_alpha16_lr3e-05_optpaged_adamw_8bit_ep3,3e-05,linear,2.916980806091022,2.787532329559326,16.240893140529728
+run_7_r8_alpha16_lr3e-05_optpaged_adamw_8bit_ep10,3e-05,linear,1.501562991612394,2.441568613052368,11.491051626615004
+run_13_r16_alpha32_lr5e-05_optpaged_adamw_8bit_ep3,5e-05,linear,2.3512275856985174,2.333951711654663,10.318637350494686
+run_6_r8_alpha16_lr3e-05_optpaged_adamw_8bit_ep3,3e-05,cosine,2.8788691014751024,2.789036273956299,16.2653369172034
+run_1_r8_alpha16_lr5e-05_optpaged_adamw_8bit_ep3,5e-05,linear,2.6168601210688203,2.5552008152008057,12.873884669693682
+run_19_r16_alpha32_lr3e-05_optpaged_adamw_8bit_ep10,3e-05,linear,1.1867795561400938,2.558864116668701,12.921132078214718
+run_10_r8_alpha16_lr1e-05_optpaged_adamw_8bit_ep3,1e-05,cosine,3.314952599610521,3.2354822158813477,25.4186260891816
+run_14_r16_alpha32_lr5e-05_optpaged_adamw_8bit_ep3,5e-05,cosine,2.3205243321091915,2.36537504196167,10.64803152737829
+run_16_r16_alpha32_lr5e-05_optpaged_adamw_8bit_ep10,5e-05,cosine,0.9013151561710196,2.458169460296631,11.683405016459625
+run_9_r8_alpha16_lr1e-05_optpaged_adamw_8bit_ep3,1e-05,linear,3.3394052568175985,3.2453079223632812,25.669613091333414
+run_4_r8_alpha16_lr5e-05_optpaged_adamw_8bit_ep10,5e-05,cosine,1.053482675552368,2.5100903511047363,12.30604187476115
+run_20_r16_alpha32_lr3e-05_optpaged_adamw_8bit_ep10,3e-05,cosine,1.1291187259512887,2.4807441234588623,11.9501534997079
+run_18_r16_alpha32_lr3e-05_optpaged_adamw_8bit_ep3,3e-05,cosine,2.663930185523951,2.613229274749756,13.643036906670844
+run_22_r16_alpha32_lr1e-05_optpaged_adamw_8bit_ep3,1e-05,cosine,3.1837797478331087,3.089047431945801,21.956153281039164
+run_11_r8_alpha16_lr1e-05_optpaged_adamw_8bit_ep10,1e-05,linear,2.698872184753418,2.671704053878784,14.464596655617735
+run_8_r8_alpha16_lr3e-05_optpaged_adamw_8bit_ep10,3e-05,cosine,1.4339146768543083,2.411726713180542,11.153202910250073
+
+run_name         run_13_r16_alpha32_lr5e-05_optpaged_adamw_8bit...
+learning_rate                                              0.00005
+scheduler                                                   linear
+train_loss                                                2.351228
+eval_loss                                                 2.333952
+perplexity                                               10.318637
+Name: 8, dtype: object
+
+📉 Peggiore run:
+run_name         run_9_r8_alpha16_lr1e-05_optpaged_adamw_8bit_ep3
+learning_rate                                             0.00001
+scheduler                                                  linear
+train_loss                                               3.339405
+eval_loss                                                3.245308
+perplexity                                              25.669613

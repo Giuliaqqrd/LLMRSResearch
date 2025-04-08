@@ -1,0 +1,47 @@
+run_name,learning_rate,scheduler,weight_decay,epochs,train_loss,eval_loss,perplexity
+run_3_facebookopt350_lr5e-05_schedlinear_wd0.01_epochs10,5e-05,linear,0.01,10,0.9821381741099887,1.7748664617538452,5.899493275730183
+run_13_facebookopt350_lr5e-05_schedcosine_wd0.001_epochs3,5e-05,cosine,0.001,3,2.2267968389723034,2.2127130031585693,9.140480938362371
+run_19_facebookopt350_lr2e-05_schedlinear_wd0.01_epochs3,2e-05,linear,0.01,3,2.7660987112257214,2.7788496017456055,16.10048831646375
+run_4_facebookopt350_lr5e-05_schedlinear_wd0.001_epochs3,5e-05,linear,0.001,3,2.2267789664091886,2.213789463043213,9.150325597158364
+run_25_facebookopt350_lr2e-05_schedlinear_wd0.0001_epochs3,2e-05,linear,0.0001,3,2.766438360567446,2.779895782470703,16.117341151023325
+run_12_facebookopt350_lr5e-05_schedcosine_wd0.01_epochs10,5e-05,cosine,0.01,10,0.9829727404647404,1.7721385955810547,5.883422177455145
+run_18_facebookopt350_lr5e-05_schedcosine_wd0.0001_epochs10,5e-05,cosine,0.0001,10,0.9807190616925557,1.7688015699386597,5.863821768506325
+run_16_facebookopt350_lr5e-05_schedcosine_wd0.0001_epochs3,5e-05,cosine,0.0001,3,2.2262487411499023,2.215785026550293,9.168603884673962
+run_10_facebookopt350_lr5e-05_schedcosine_wd0.01_epochs3,5e-05,cosine,0.01,3,2.2260243362850614,2.217012405395508,9.179864144010622
+run_23_facebookopt350_lr2e-05_schedlinear_wd0.001_epochs5,2e-05,linear,0.001,5,2.2276902039845785,2.39113187789917,10.925853679175358
+run_24_facebookopt350_lr2e-05_schedlinear_wd0.001_epochs10,2e-05,linear,0.001,10,1.4304195801417032,1.9341031312942505,6.917836880874133
+run_21_facebookopt350_lr2e-05_schedlinear_wd0.01_epochs10,2e-05,linear,0.01,10,1.430163746409946,1.9366575479507446,6.9355305074558
+run_1_facebookopt350_lr5e-05_schedlinear_wd0.01_epochs3,5e-05,linear,0.01,3,2.2260243362850614,2.217012405395508,9.179864144010622
+run_5_facebookopt350_lr5e-05_schedlinear_wd0.001_epochs5,5e-05,linear,0.001,5,1.5890448649724325,1.859803557395935,6.422474999786838
+run_7_facebookopt350_lr5e-05_schedlinear_wd0.0001_epochs3,5e-05,linear,0.0001,3,2.2262487411499023,2.215785026550293,9.168603884673962
+run_8_facebookopt350_lr5e-05_schedlinear_wd0.0001_epochs5,5e-05,linear,0.0001,5,1.5875711838404338,1.849938154220581,6.35942620676908
+run_14_facebookopt350_lr5e-05_schedcosine_wd0.001_epochs5,5e-05,cosine,0.001,5,1.5891261365678575,1.8579639196395874,6.410670833312233
+run_17_facebookopt350_lr5e-05_schedcosine_wd0.0001_epochs5,5e-05,cosine,0.0001,5,1.5874196502897475,1.8499287366867065,6.359366316939363
+run_11_facebookopt350_lr5e-05_schedcosine_wd0.01_epochs5,5e-05,cosine,0.01,5,1.5899730364481608,1.8518049716949463,6.371309182961593
+run_6_facebookopt350_lr5e-05_schedlinear_wd0.001_epochs10,5e-05,linear,0.001,10,0.9820921811792586,1.764980673789978,5.841459463722657
+run_9_facebookopt350_lr5e-05_schedlinear_wd0.0001_epochs10,5e-05,linear,0.0001,10,0.9806760629018147,1.7641328573226929,5.83650907700255
+run_2_facebookopt350_lr5e-05_schedlinear_wd0.01_epochs5,5e-05,linear,0.01,5,1.5899378246731228,1.8526349067687988,6.376599150780167
+run_15_facebookopt350_lr5e-05_schedcosine_wd0.001_epochs10,5e-05,cosine,0.001,10,0.9820179363091787,1.762620449066162,5.827688564274633
+run_22_facebookopt350_lr2e-05_schedlinear_wd0.001_epochs3,2e-05,linear,0.001,3,2.766422713244403,2.7804758548736572,16.12669308797207
+run_20_facebookopt350_lr2e-05_schedlinear_wd0.01_epochs5,2e-05,linear,0.01,5,2.2256895277235245,2.391894817352295,10.934192624657033
+
+📈 Migliore run:
+run_name         run_15_facebookopt350_lr5e-05_schedcosine_wd0....
+learning_rate                                              0.00005
+scheduler                                                   cosine
+weight_decay                                                 0.001
+epochs                                                          10
+train_loss                                                0.982018
+eval_loss                                                  1.76262
+perplexity                                                5.827689
+Name: 22, dtype: object
+
+📉 Peggiore run:
+run_name         run_22_facebookopt350_lr2e-05_schedlinear_wd0....
+learning_rate                                              0.00002
+scheduler                                                   linear
+weight_decay                                                 0.001
+epochs                                                           3
+train_loss                                                2.766423
+eval_loss                                                 2.780476
+perplexity                                               16.126693
